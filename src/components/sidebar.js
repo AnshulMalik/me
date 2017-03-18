@@ -21,10 +21,10 @@ class Sidebar extends React.Component {
 
   render () {
     return <div className="sidebar">
-      <img id="close-sidebar" className="close-img" src="../img/close.png" />
+      <img id="close-sidebar" className="close-img" src="img/close.png" />
       <br />
       <br />
-      <img className="my-img" src="../img/me.jpg"/>
+      <img className="my-img" src="img/me.jpg"/>
       <h2>Anshul Malik</h2>
       <p>Love helping, hacking, playing basketball :)</p>
     </div>;

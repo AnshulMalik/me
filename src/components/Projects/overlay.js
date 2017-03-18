@@ -36,9 +36,9 @@ class Overlay extends React.Component {
 
     return <div className="overlay">
       <img className="close-img" onClick={ this.hide } src="img/close.png"></img>
-      <h1><a href={list[i].url}>{ list[i].title }</a></h1>
+      <h1><a href={list[i].url} target="_blank">{ list[i].title }</a></h1>
       <h2>Role: { list[i].role } </h2>
-      <a href={list[i].github}>Github</a>
+      <a href={list[i].github} target="_blank">Github</a>
       <p>{list[i].description}</p>
     </div>;
   }
