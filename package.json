@@ -1,0 +1,31 @@
+{
+  "name": "aboutme",
+  "version": "1.0.0",
+  "description": "Personal profile",
+  "main": "index.js",
+  "repository": "https://github.com/AnshulMalik/AnshulMalik.github.io",
+  "author": "Anshul Malik",
+  "license": "MIT",
+  "dependencies": {
+    "babel-core": "^6.24.0",
+    "babel-loader": "^6.4.1",
+    "babel-preset-es2015": "^6.24.0",
+    "babel-preset-latest": "^6.24.0",
+    "babel-preset-react": "^6.23.0",
+    "eslint-plugin-babel": "^4.1.1",
+    "eslint-plugin-react": "^6.10.0",
+    "react": "^15.4.2",
+    "react-custom-scrollbars": "^4.0.2",
+    "react-dom": "^15.4.2",
+    "webpack": "^2.2.1"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --hot --inline",
+    "build": "node_modules/.bin/webpack --config webpack.config.prod.js"
+  },
+  "devDependencies": {
+    "eslint-plugin-react": "^6.10.0",
+    "react-hot-loader": "^1.3.1",
+    "webpack-dev-server": "^2.4.2"
+  }
+}

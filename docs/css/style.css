@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Slab:100i,400');
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fafafa;
+  color: #7a7a7a;
+  font-family: 'Josefin Slab', serif;
+}
+
+a {
+  text-decoration: none;
+  color: #3d7bb4;
+}
+
+nav {
+  text-align: center;
+  background-color: #ccc;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  display: inline-block;
+  padding: 10px;
+  transition: all;
+  transition-duration: 300ms;
+}
+
+nav ul li a:hover {
+  background-color: rgba(1, 1, 1, .05);
+}
+
+.tab {
+  margin-right: 5em;
+  margin-left: 5em;
+}
+
+.red {
+  color: red;
+}
+
+.terminal {
+  position: absolute;
+  font-family: monospace;
+  width: 535px;
+  max-height: 300px;
+  top: 20%;
+  right: 4%;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, .05);
+  box-shadow: 0px 0px 6px rgba(1, 1, 1, .2);
+}
+
+.output {
+  padding: 5px 2px 0px 10px;
+  height: 250px;
+  border-radius: 5px 0px;
+  overflow-y: hidden;
+}
+
+.input {
+  padding: 0px 10px 5px 10px;
+  width: calc(100% - 20px);
+  border: none;
+  border-radius: 0px 0px 5px 5px;
+  cursor: text;
+  word-break: break-all;
+}
+.cursor {
+  width: 6px;
+  display: inline-block;
+  background-color: #929292;
+}
+
+.terminal-header {
+  padding: 3px 5px 1px 5px;
+  border-radius: 5px 5px 0 0;
+  background-color: #dddddd;
+}
+
+.terminal-buttons {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.terminal-btn {
+  display: inline-block;
+  margin: 0px 2px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  cursor: default;
+}
+
+.close-btn {
+  background-color: #fc605b;
+}
+
+.min-btn {
+  background-color: #fdbc40;
+}
+.min-btn:hover {
+  background-image: url('../img/min.png');
+  background-size: contain;
+}
+
+.max-btn {
+  background-color: #33c748;
+}
+
+.max-btn:hover {
+  background-image: url('../img/max.jpg');
+  background-size: contain;
+}
+
+
+.mini-proj {
+  padding: 10px;
+  margin: 5px 2px 5px 0px;
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  cursor: pointer;
+}
+.mini-proj:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.about {
+  position: absolute;
+  top: 25%;
+  left: 4%;
+  padding-right: 30px;
+  max-width: 450px;
+  font-weight: 400;
+}
+
+
+.sidebar {
+  position: absolute;
+  width: 250px;
+  height: 100%;
+  text-align: center;
+  background-color: rgb(238, 238, 238);
+  box-shadow: 1px 0px 3px rgba(0, 0, 0, .2);
+  z-index: 10;
+  transform: translateX(-255px);
+  transition: all;
+  transition-duration: 400ms;
+}
+
+.my-img {
+  width: 200px;
+  border-radius: 50%;
+}
+
+#menu-btn {
+  position: absolute;
+  cursor: pointer;
+  left: 4%;
+}
+
+.close-img {
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+  cursor: pointer;
+  width: 30px;
+  float: right;
+  margin: 15px;
+}
+
+.close-img:hover {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.overlay {
+  position: absolute;
+  width: 60%;
+  left: 20%;
+  margin: 0 auto;
+  margin-top: 10%;
+  padding: 15px;
+  min-height: 200px;
+  border: 1px solid;
+  background-color: rgb(250, 250, 250);
+  border-radius: 5px;
+  transform: translateY(-500%);
+  transition: all;
+  transition-duration: 500ms;
+}
+.overlay .close-img {
+  width: 20px;
+}
