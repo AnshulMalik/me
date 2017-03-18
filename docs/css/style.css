@@ -51,12 +51,14 @@ nav ul li a:hover {
   position: absolute;
   font-family: monospace;
   width: 535px;
+  max-width: 535px;
   max-height: 300px;
   top: 20%;
-  right: 4%;
+  right: 2%;
   border-radius: 5px;
   background-color: rgba(0, 0, 0, .05);
   box-shadow: 0px 0px 6px rgba(1, 1, 1, .2);
+  transform: scale(.9);
 }
 
 .output {
@@ -138,7 +140,7 @@ nav ul li a:hover {
 .about {
   position: absolute;
   top: 25%;
-  left: 4%;
+  left: 3%;
   padding-right: 30px;
   max-width: 450px;
   font-weight: 400;
@@ -166,7 +168,7 @@ nav ul li a:hover {
 #menu-btn {
   position: absolute;
   cursor: pointer;
-  left: 4%;
+  left: 3%;
 }
 
 .close-img {
@@ -200,4 +202,42 @@ nav ul li a:hover {
 }
 .overlay .close-img {
   width: 20px;
+}
+
+@media screen and (max-width: 1024px) {
+  .about {
+    max-width: 400px;
+  }
+  .terminal {
+    max-width: 445px;
+    right: 0;
+    transform: scale(.8);
+  }
+  #menu-btn {
+    left: 1%;
+  }
+  .about {
+    left: 1%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about {
+    top: 10%;
+    max-width: 90%;
+    margin-left: 5%;
+  }
+  .terminal {
+    width: 80%;
+    max-width: 525px;
+    right: 10%;
+    top: 50%;
+    transform: scale(1);
+  }
+  #menu-btn {
+    left: 1%;
+  }
+  .about {
+    left: 1%;
+  }
 }
