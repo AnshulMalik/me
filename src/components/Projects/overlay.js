@@ -26,11 +26,12 @@ class Overlay extends React.Component {
     document.addEventListener('show-project', this.show);
   }
 
-  show() {
+  show(e) {
+    e = e || { detail: this.state.index };
     let overlay = document.querySelector('.overlay');
     overlay.style.transform = 'translateY(0)';
     this.refs.container.style.visibility = 'visible';
-    this.setState({ visible: true });
+    this.setState({ index: e.detail, visible: true });
   }
 
   hide() {
