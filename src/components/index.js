@@ -16,9 +16,9 @@ class Container extends React.Component {
     return <div>
       <img id="menu-btn" src="img/menu.png"/>
       <Sidebar />
+      <ShowProject />
       <DisplayArea display = {this.state.displayed}/>
       <Terminal />
-      <ShowProject />
     </div>;
   }
 

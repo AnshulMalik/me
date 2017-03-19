@@ -11,9 +11,10 @@ class Terminal extends React.Component {
     this.executeCommand = this.executeCommand.bind(this);
   }
 
-  executeCommand () {
-    this.props.execute(this.state.text);
-    this.history.push(this.state.text);
+  executeCommand (command) {
+    command = command || this.state.text;
+    this.props.execute(command);
+    this.history.push(command);
     this.historyPointer = this.history.length;
     this.setState({ text: ''});
   }
@@ -32,6 +33,11 @@ class Terminal extends React.Component {
       this.historyPointer = this.history.length;
       this.setState( { text: '' });
     }
+  }
+
+  componentDidMount() {
+    document.addEventListener('ls', this.executeCommand.bind(this, 'ls'));
+    document.addEventListener('skills', this.executeCommand.bind(this, 'skills'));
   }
 
   handleKeyDown (e) {

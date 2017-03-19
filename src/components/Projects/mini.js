@@ -1,17 +1,14 @@
 import React from 'react';
 import list from './list';
 
-let mini = '';
-
 window.projectOnClick = function(i) {
   let event = new CustomEvent('show-project', { detail: i });
   document.dispatchEvent(event);
 };
 
-list.forEach((project, i) => {
-  mini += `<div class="mini-proj" onClick=projectOnClick(${i})>${project.title}</div>`;
+const Mini = list.map((project, i) => {
+  return <div key={i} className="mini-proj" onClick={ projectOnClick.bind(this, i) }>{ project.title }</div>;
 });
+Mini.unshift(<br />);
 
-console.log(mini);
-
-export default mini;
+export default Mini;

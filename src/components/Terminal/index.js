@@ -4,35 +4,40 @@ import Input from './input';
 import TerminalHeader from './header';
 import MiniProjects from '../Projects/mini';
 
-const invalidCommandMsg = '<span class="red">Oops</span> Command not found!';
-const helpMsg = '<br />\
-Commands available:<br />\
-<table>\
-  <tr>\
-    <td><strong>help</strong> </td>\
-    <td>Show help</td>\
-  </tr>\
-  <tr>\
-    <td><strong>ls</strong></td>\
-    <td>List projects</td>\
-  <tr>\
-    <td><strong>clear</strong></td>\
-    <td>To clear the console</td>\
-  </tr>\
-</table>';
+console.log(MiniProjects);
+const invalidCommandMsg = <div><br /><span className="red">Oops</span> Command not found!</div>;
+const helpMsg = <div><br />
+Commands available:<br />
+  <table>
+    <tbody>
+      <tr>
+        <td><strong>help</strong> </td>
+        <td>Show help</td>
+      </tr>
+      <tr>
+        <td><strong>ls</strong></td>
+        <td>List projects</td>
+      </tr>
+      <tr>
+        <td><strong>clear</strong></td>
+        <td>To clear the console</td>
+      </tr>
+    </tbody>
+  </table>
+</div>;
 
 const commands = {
   clear: () => '',
-  help: (prev) => prev + helpMsg,
-  ls: (prev) => prev + MiniProjects,
-  skills: () => {}
+  help: (prev) => [...prev, helpMsg],
+  ls: (prev) => [...prev, MiniProjects],
+  skills: (prev) => prev
 };
 
 
 class Terminal extends React.Component {
   constructor (props) {
     super (props);
-    this.state = { output: helpMsg };
+    this.state = { output: [helpMsg] };
     this.execute = this.execute.bind(this);
   }
 
@@ -43,7 +48,7 @@ class Terminal extends React.Component {
       output = commands[command](output);
     }
     else {
-      output += '<br />' + invalidCommandMsg;
+      output = [...output, new invalidCommandMsg];
     }
 
     this.setState({output});

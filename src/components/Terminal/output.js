@@ -6,15 +6,22 @@ class Output extends React.Component {
     super (props);
   }
 
+  componentDidUpdate() {
+    this.refs.scrollbars.scrollToBottom();
+  }
   render () {
     return <div className="output">
       <Scrollbars
+      ref = 'scrollbars'
         >
-          <div dangerouslySetInnerHTML = {{ __html: this.props.text }}></div>
-        </Scrollbars>
+          { this.props.text }
+          </Scrollbars>
       </div>;
   }
 
 }
+
+//           <div dangerouslySetInnerHTML = {{ __html: this.props.text }}></div>
+
 
 export default Output;
