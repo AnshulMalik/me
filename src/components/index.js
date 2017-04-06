@@ -1,15 +1,13 @@
 import React from 'react';
 import Terminal from './Terminal';
-import DisplayArea from './Display';
+import About from './about';
 import Sidebar from './sidebar';
 import ShowProject from './Projects/overlay';
+import Popover from './Popover/Popover';
 
 class Container extends React.Component {
   constructor (props) {
     super (props);
-    this.state = {
-      displayed: {type: 'about' }
-    };
   }
 
   render () {
@@ -17,8 +15,10 @@ class Container extends React.Component {
       <img id="menu-btn" src="img/menu.png"/>
       <Sidebar />
       <ShowProject />
-      <DisplayArea display = {this.state.displayed}/>
-      <Terminal />
+      <div className="container">
+        <About />
+        <Terminal />
+      </div>
     </div>;
   }
 

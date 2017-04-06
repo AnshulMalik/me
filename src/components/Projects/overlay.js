@@ -1,5 +1,7 @@
 import React from 'react';
-import list from './list';
+import lists from './list';
+const list = lists.projectList;
+
 import CloseBtn from '../shared/closeBtn';
 import LeftArrow from '../shared/leftArrow';
 import RightArrow from '../shared/rightArrow';
@@ -44,7 +46,7 @@ class Overlay extends React.Component {
   render () {
     let i = this.state.index;
 
-    return <div className="container" ref="container">
+    return <div className="project-container" ref="container">
       <div className="overlay">
         <CloseBtn onClose={ this.hide }/>
         <h1 className="proj-head"><a href={list[i].url} target="_blank">{ list[i].title }<br /><img className="proj-img" src={ list[i].image } /></a></h1>

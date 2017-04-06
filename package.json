@@ -20,7 +20,7 @@
     "webpack": "^2.2.1"
   },
   "scripts": {
-    "start": "webpack-dev-server --hot --inline",
+    "start": "webpack-dev-server --hot --inline --content-base docs",
     "build": "node_modules/.bin/webpack --config webpack.config.prod.js"
   },
   "devDependencies": {

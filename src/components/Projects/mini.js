@@ -1,5 +1,7 @@
 import React from 'react';
-import list from './list';
+import lists from './list';
+
+const list = lists.projectList;
 
 window.projectOnClick = function(i) {
   let event = new CustomEvent('show-project', { detail: i });
@@ -7,8 +9,8 @@ window.projectOnClick = function(i) {
 };
 
 const Mini = list.map((project, i) => {
-  return <div key={i} className="mini-proj" onClick={ projectOnClick.bind(this, i) }>{ project.title }</div>;
+  return <div key={'pro-' + i} className="mini-proj" onClick={ projectOnClick.bind(this, i) }>{ project.title }</div>;
 });
-Mini.unshift(<br />);
+Mini.push(<br />);
 
 export default Mini;

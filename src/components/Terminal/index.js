@@ -3,8 +3,8 @@ import Output from './output';
 import Input from './input';
 import TerminalHeader from './header';
 import MiniProjects from '../Projects/mini';
+import Skills from '../skills';
 
-console.log(MiniProjects);
 const invalidCommandMsg = <div><br /><span className="red">Oops</span> Command not found!</div>;
 const helpMsg = <div><br />
 Commands available:<br />
@@ -19,6 +19,10 @@ Commands available:<br />
         <td>List projects</td>
       </tr>
       <tr>
+        <td><strong>skills </strong></td>
+        <td> Skills I have</td>
+      </tr>
+      <tr>
         <td><strong>clear</strong></td>
         <td>To clear the console</td>
       </tr>
@@ -30,7 +34,7 @@ const commands = {
   clear: () => '',
   help: (prev) => [...prev, helpMsg],
   ls: (prev) => [...prev, MiniProjects],
-  skills: (prev) => prev
+  skills: (prev) => [...prev, Skills]
 };
 
 
@@ -48,7 +52,7 @@ class Terminal extends React.Component {
       output = commands[command](output);
     }
     else {
-      output = [...output, new invalidCommandMsg];
+      output = [...output, invalidCommandMsg];
     }
 
     this.setState({output});
